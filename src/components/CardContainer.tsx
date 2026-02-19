@@ -12,7 +12,7 @@ export default function CardContainer() {
         Navigate & Display
       </h2>
 
-      <div className={`d-grid g2 ${styles.section}`}>
+      <div className={`d-grid g1 ${styles.section}`}>
         <Card command="pwd" description={<>Print the working directory</>} />
         <Card
           command="cat FILE"
@@ -121,7 +121,7 @@ export default function CardContainer() {
         Dir & File Creation
       </h2>
 
-      <div className={`d-grid g2 ${styles.section}`}>
+      <div className={`d-grid g1 ${styles.section}`}>
         <Card
           command="mkdir NAME"
           description={
@@ -155,7 +155,7 @@ export default function CardContainer() {
         Move, Copy, Delete
       </h2>
 
-      <div className={`d-grid g2 ${styles.section}`}>
+      <div className={`d-grid g1 ${styles.section}`}>
         <Card
           command="mv [-n] FILE DESTINATION"
           description={
@@ -224,7 +224,7 @@ export default function CardContainer() {
         Combining Commands
       </h2>
 
-      <div className={`d-grid g2 ${styles.section}`}>
+      <div className={`d-grid g1 ${styles.section}`}>
         <Card
           command="COMMAND > FILE"
           description={
@@ -265,7 +265,7 @@ export default function CardContainer() {
         Miscellaneous
       </h2>
 
-      <div className={`d-grid g2 ${styles.section}`}>
+      <div className={`d-grid g1 ${styles.section}`}>
         <Card
           command="man COMMAND"
           description={
