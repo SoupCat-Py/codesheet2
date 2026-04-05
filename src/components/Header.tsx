@@ -91,12 +91,11 @@ export default function Header() {
     <div className="d-flex flex-row bg-norm border align-center justify-between p1 r1">
       <div className="d-flex flex-row justify-center">
         {/* header div */}
-        <a
+        <span
           className={`size1 color-text nodeco m0 p0 ${styles.header}`}
-          href="#"
         >
           Common&nbsp;Zshell&nbsp;Commands
-        </a>
+        </span>
       </div>
 
       <div className="d-flex flex-row justify-center align-center g-1">
