@@ -4,9 +4,10 @@ import styles from "../styles/Card.module.css";
 type CardProp = {
   command: string;
   description: React.ReactNode;
+  wide?: boolean;
 };
 
-export default function Card({ command, description }: CardProp) {
+export default function Card({ command, description, wide=false }: CardProp) {
 
   // initialize state
   const [copy_state, set_copy_state] = useState("copy");
@@ -64,7 +65,7 @@ export default function Card({ command, description }: CardProp) {
   }
 
   return (
-    <div className="d-flex flex-col bg-norm border r1 p1 g1">
+    <div className={`d-flex flex-col bg-norm border r1 p1 g1 ${wide?"wide-grid":null}`}>
       <h3 className="d-flex flex-row bg-dark-select color-primary size3 m0 p05 r05 code align-center justify-between">
         <div className="d-flex flex-row">
           <span className="color-success size3">$&nbsp;&nbsp;</span>

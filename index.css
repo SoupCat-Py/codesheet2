@@ -72,6 +72,10 @@
 .align-start {align-items: start;}
 .align-end {align-items: end;}
 .d-grid {display: grid;}
+.wide-grid {grid-column: span 2}
+@media (max-width: 1000px) {
+    .wide-grid {grid-column: span 1}
+}
 .pos-rel {position: relative;}
 .pos-abs {position: absolute;}
 

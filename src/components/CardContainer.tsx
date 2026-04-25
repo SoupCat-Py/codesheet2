@@ -145,6 +145,7 @@ export default function CardContainer() {
           }
         />
         <Card
+          wide
           command="ln [-srfiv] TARGET LINK"
           description={
             <>
