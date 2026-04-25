@@ -157,11 +157,12 @@ export default function CardContainer() {
               <br/>
               <CodeSnippet i="-r"/> to be used with <CodeSnippet i="-s"/>, store the target as a relative path (from <CodeSnippet i="LINK"/>'s location). Use when <CodeSnippet i="LINK"/> is in a subdirectory, or use an absolute path instead.
               <br/>
-              <CodeSnippet i="f"/> overwrite existing links.
+              <CodeSnippet i="-f"/> overwrite existing links.
               <br/>
-              <CodeSnippet i="n"/> skip if a link with the same name exists. Basically the opposite of <CodeSnippet i="-f"/>
+              <CodeSnippet i="-n"/> skip if a link with the same name exists. Basically the opposite of <CodeSnippet i="-f"/>
               <br/>
-              <CodeSnippet i="v"/> verbose output.
+              <CodeSnippet i="-v"/> verbose output.
+              <br/> There's quite a bit more to it so I recommend looking at the manual for more info.
             </>
           }
         />
@@ -301,6 +302,18 @@ export default function CardContainer() {
           }
         />
         <Card
+          command="export VARNAME = VALUE"
+          description={
+            <>
+              Make a variable for your current zsh session.
+              <br/>
+              You can use <CodeSnippet i="echo $VARNAME"/> to print out your variable.
+              <br/>
+              Example: <CodeSnippet i='export path="~/downloads/data.json"'/>
+            </>
+          }
+        />
+        <Card
           command="alias ALIAS=COMMAND"
           description={
             <>
@@ -323,16 +336,26 @@ export default function CardContainer() {
           }
         />
         <Card
-          command="export VARNAME = VALUE"
+          command="grep [-irnvc] [-ABC AMOUNT] PATTERN FILE"
           description={
             <>
-              Make a variable for your current zsh session.
+              Search for <CodeSnippet i="PATTERN"/> in <CodeSnippet i="FILE"/> or from piped input.
               <br/>
-              You can use <CodeSnippet i="echo $VARNAME"/> to print out your variable.
+              Grep will search in the working dir if <CodeSnippet i="FILE"/> is not specified.
               <br/>
-              Example: <CodeSnippet i='export path="~/downloads/data.json"'/>
+              <CodeSnippet i="-i"/> case sensitive
+              <br/>
+              <CodeSnippet i="-r"/> recursive. Search in subdirectories
+              <br/>
+              <CodeSnippet i="-n"/> show line numbers of matches
+              <br/>
+              <CodeSnippet i="-v"/> invert match. Only show results that do not contain <CodeSnippet i="PATTERN"/>
+              <br/>
+              <CodeSnippet i="-c"/> count matches instead of printing them out
+              <br/>
+              <CodeSnippet i="-A,B,C"/> Show <CodeSnippet i="AMOUNT"/> lines of context. <CodeSnippet i="A"/> shows before and after, <CodeSnippet i="B"/> only before, <CodeSnippet i="C"/> only after
             </>
-          }
+        }
         />
       </div>
 
