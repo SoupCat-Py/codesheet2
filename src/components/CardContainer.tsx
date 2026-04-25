@@ -13,12 +13,12 @@ export default function CardContainer() {
       </h2>
 
       <div className={`d-grid g1 ${styles.section}`}>
-        <Card command="pwd" description={<>Print the working directory</>} />
+        <Card command="pwd" description={<>Print the working directory</>}/>
         <Card
           command="cat FILE"
           description={
             <>
-              Print the contents of <CodeSnippet i="FILE" />
+              Print the contents of <CodeSnippet i="FILE"/>
             </>
           }
         />
@@ -26,18 +26,18 @@ export default function CardContainer() {
           command="cd DIR"
           description={
             <>
-              Move to <CodeSnippet i="DIR" />
-              <br />
-              <CodeSnippet i="DIR" /> can be an absolute or relative path
-              <br />
-              <br />
+              Move to <CodeSnippet i="DIR"/>
+              <br/>
+              <CodeSnippet i="DIR"/> can be an absolute or relative path
+              <br/>
+              <br/>
               A few shortcuts you can use:
-              <br />
-              <CodeSnippet i= "cd" /> go to root (<CodeSnippet i="~" />).
-              <br />
-              <CodeSnippet i= "cd -" /> go back to the previous dir.
-              <br />
-              <CodeSnippet i= "cd ../" /> go back one step in the file tree.
+              <br/>
+              <CodeSnippet i="cd"/> go to root (<CodeSnippet i="~"/>).
+              <br/>
+              <CodeSnippet i="cd -"/> go back to the previous dir.
+              <br/>
+              <CodeSnippet i="cd ../"/> go back one step in the file tree.
             </>
           }
         />
@@ -46,12 +46,12 @@ export default function CardContainer() {
           description={
             <>
               List the contents of a directory
-              <br />
-              If you don't provide <CodeSnippet i="DIR" />, it will list the
+              <br/>
+              If you don't provide <CodeSnippet i="DIR"/>, it will list the
               working dir
-              <br />
+              <br/>
               There are a <strong>lot</strong> other arguments you can use, so I
-              recommend running <CodeSnippet i="man ls" /> to see what they all
+              recommend running <CodeSnippet i="man ls"/> to see what they all
               do.
             </>
           }
@@ -60,12 +60,12 @@ export default function CardContainer() {
           command="head [-n] [-c] NUM FILE"
           description={
             <>
-              Print the first <CodeSnippet i="NUM" /> lines or bytes of <CodeSnippet i="FILE" />
-              <br />
-              <CodeSnippet i="-n" /> lines mode
-              <br />
-              <CodeSnippet i="-c" /> bytes mode
-              <br />
+              Print the first <CodeSnippet i="NUM"/> lines or bytes of <CodeSnippet i="FILE"/>
+              <br/>
+              <CodeSnippet i="-n"/> lines mode
+              <br/>
+              <CodeSnippet i="-c"/> bytes mode
+              <br/>
             </>
           }
         />
@@ -73,12 +73,12 @@ export default function CardContainer() {
           command="tail [-n] [-c] NUM FILE"
           description={
             <>
-              Print the last <CodeSnippet i="NUM" /> lines or bytes of <CodeSnippet i="FILE" />
-              <br />
-              <CodeSnippet i="-n" /> lines mode
-              <br />
-              <CodeSnippet i="-c" /> bytes mode
-              <br />
+              Print the last <CodeSnippet i="NUM"/> lines or bytes of <CodeSnippet i="FILE"/>
+              <br/>
+              <CodeSnippet i="-n"/> lines mode
+              <br/>
+              <CodeSnippet i="-c"/> bytes mode
+              <br/>
             </>
           }
         />
@@ -86,13 +86,14 @@ export default function CardContainer() {
           command="open FILE [-a APP]"
           description={
             <>
-              Open <CodeSnippet i="FILE" />
-              <br />
+              Open <CodeSnippet i="FILE"/>
+              <br/>
               It also works with directories.
-              <br />
-              You can optionally use <CodeSnippet i="-a" /> to specify which app to use. Leaving this out uses the file/dir's default app.
-              <br />
-              Example: <CodeSnippet i='open index.html -a "VS Code"' />
+              <br/>
+              You can optionally use <CodeSnippet i="-a"/> to specify which app to use. Leaving this out
+              uses the file/dir's default app.
+              <br/>
+              Example: <CodeSnippet i='open index.html -a "VS Code"'/>
             </>
           }
         />
@@ -100,19 +101,19 @@ export default function CardContainer() {
           command="wc [-clw] FILE"
           description={
             <>
-              Print the word and character count of <CodeSnippet i="FILE" />
-              <br />
-              <CodeSnippet i="-c" /> print the amount of bytes
-              <br />
-              <CodeSnippet i="-l" /> print the amount of lines
-              <br />
-              <CodeSnippet i="-w" /> print the amount of words
+              Print the word and character count of <CodeSnippet i="FILE"/>
+              <br/>
+              <CodeSnippet i="-c"/> print the amount of bytes
+              <br/>
+              <CodeSnippet i="-l"/> print the amount of lines
+              <br/>
+              <CodeSnippet i="-w"/> print the amount of words
             </>
           }
         />
       </div>
 
-      <hr className={styles.hr} />
+      <hr className={styles.hr}/>
 
       <h2
         className={`size2 color-primary m0 p0 ${styles.subheader}`}
@@ -126,9 +127,9 @@ export default function CardContainer() {
           command="mkdir NAME"
           description={
             <>
-              Create a directory called <CodeSnippet i="NAME" />
-              <br />
-              <CodeSnippet i="NAME" /> can be an absolute or relative path]
+              Create a directory called <CodeSnippet i="NAME"/>
+              <br/>
+              <CodeSnippet i="NAME"/> can be an absolute or relative path]
             </>
           }
         />
@@ -136,17 +137,37 @@ export default function CardContainer() {
           command="touch FILENAME"
           description={
             <>
-              Create a file called <CodeSnippet i="FILENAME" />
-              <br />
-              <CodeSnippet i="FILENAME" /> can be an absolute or relative path
-              <br />
+              Create a file called <CodeSnippet i="FILENAME"/>
+              <br/>
+              <CodeSnippet i="FILENAME"/> can be an absolute or relative path
+              <br/>
               Remember to include the extension (such as .txt)
+            </>
+          }
+        />
+        <Card
+          command="ln [-srfiv] TARGET LINK"
+          description={
+            <>
+              Make a link to <CodeSnippet i="TARGET"/> at <CodeSnippet i="LINK"/>
+              <br/>
+              If you want to create <CodeSnippet i="LINK"/>
+              <br/>
+              <CodeSnippet i="-s"/> make a <strong>symbolic</strong> link instead of a hard one (symlinks link to a dir while hard links point to actual data on the disk)
+              <br/>
+              <CodeSnippet i="-r"/> to be used with <CodeSnippet i="-s"/>, store the target as a relative path (from <CodeSnippet i="LINK"/>'s location). Use when <CodeSnippet i="LINK"/> is in a subdirectory, or use an absolute path instead.
+              <br/>
+              <CodeSnippet i="f"/> overwrite existing links.
+              <br/>
+              <CodeSnippet i="n"/> skip if a link with the same name exists. Basically the opposite of <CodeSnippet i="-f"/>
+              <br/>
+              <CodeSnippet i="v"/> verbose output.
             </>
           }
         />
       </div>
 
-      <hr className={styles.hr} />
+      <hr className={styles.hr}/>
 
       <h2
         className={`size2 color-primary m0 p0 ${styles.subheader}`}
@@ -160,17 +181,18 @@ export default function CardContainer() {
           command="mv [-n] FILE DESTINATION"
           description={
             <>
-              Move <CodeSnippet i="FILE" /> to <CodeSnippet i="DESTINATION" />
-              <br />
-              Use the same directory in <CodeSnippet i="FILE" /> and <CodeSnippet i="DESTINATION" /> to rename <CodeSnippet i="FILE" />
-              <br />
-              <CodeSnippet i="-n" /> prevents overwriting existing files.
-              <br />
-              <br />
-              Examples: <br />
-              move <CodeSnippet i="mv ~/file.txt ~/dir/file.txt" />
-              <br />
-              rename <CodeSnippet i="mv ~/file.txt ~/file2.txt" />
+              Move <CodeSnippet i="FILE"/> to <CodeSnippet i="DESTINATION"/>
+              <br/>
+              Use the same directory in <CodeSnippet i="FILE"/> and <CodeSnippet i="DESTINATION"/> to
+              rename <CodeSnippet i="FILE"/>
+              <br/>
+              <CodeSnippet i="-n"/> prevents overwriting existing files.
+              <br/>
+              <br/>
+              Examples: <br/>
+              move <CodeSnippet i="mv ~/file.txt ~/dir/file.txt"/>
+              <br/>
+              rename <CodeSnippet i="mv ~/file.txt ~/file2.txt"/>
             </>
           }
         />
@@ -178,7 +200,7 @@ export default function CardContainer() {
           command="cp FILE DESTINATION"
           description={
             <>
-              Copy <CodeSnippet i="FILE" /> to <CodeSnippet i="DESTINATION" />
+              Copy <CodeSnippet i="FILE"/> to <CodeSnippet i="DESTINATION"/>
             </>
           }
         />
@@ -186,20 +208,20 @@ export default function CardContainer() {
           command="rm [-rfvi] FILE"
           description={
             <>
-              Delete <CodeSnippet i="FILE" />
-              <br />
-              <CodeSnippet i="-r" /> deletes recursively (for non-empty
+              Delete <CodeSnippet i="FILE"/>
+              <br/>
+              <CodeSnippet i="-r"/> deletes recursively (for non-empty
               directories)
-              <br />
-              <CodeSnippet i="-f" /> force deletion
-              <br />
-              <CodeSnippet i="-v" /> verbose (print out files as they get
+              <br/>
+              <CodeSnippet i="-f"/> force deletion
+              <br/>
+              <CodeSnippet i="-v"/> verbose (print out files as they get
               deleted)
-              <br />
-              <CodeSnippet i="-i" /> request confirmation before deleting each
+              <br/>
+              <CodeSnippet i="-i"/> request confirmation before deleting each
               file (must type "y" or "n")
-              <br />
-              Note that <CodeSnippet i="-i" /> overrides <CodeSnippet i="-f" />
+              <br/>
+              Note that <CodeSnippet i="-i"/> overrides <CodeSnippet i="-f"/>
             </>
           }
         />
@@ -207,15 +229,15 @@ export default function CardContainer() {
           command="rmdir DIR"
           description={
             <>
-              Delete <CodeSnippet i="DIR" />
-              <br />
-              Note that <CodeSnippet i="DIR" /> must be <strong>empty</strong>.
+              Delete <CodeSnippet i="DIR"/>
+              <br/>
+              Note that <CodeSnippet i="DIR"/> must be <strong>empty</strong>.
             </>
           }
         />
       </div>
 
-      <hr className={styles.hr} />
+      <hr className={styles.hr}/>
 
       <h2
         className={`size2 color-primary m0 p0 ${styles.subheader}`}
@@ -229,16 +251,18 @@ export default function CardContainer() {
           command="COMMAND > FILE"
           description={
             <>
-              Pipe the output of <CodeSnippet i="COMMAND" /> into <CodeSnippet i="FILE" />
-              <br />
-              Note that this writes at the <strong>beginning</strong> of the file and replaces any content.
-              <br />
-              Example: <CodeSnippet i='echo "hello world" > file.txt' />
-              <br />
-              <br />
-              If you want to <strong>append</strong> to the end of the file, use <CodeSnippet i=">>" /> instead.
-              <br />
-              Example: <CodeSnippet i='echo "foo bar" >> list.md' />
+              Pipe the output of <CodeSnippet i="COMMAND"/> into <CodeSnippet i="FILE"/>
+              <br/>
+              Note that this writes at the <strong>beginning</strong> of the file and replaces any
+              content.
+              <br/>
+              Example: <CodeSnippet i='echo "hello world" > file.txt'/>
+              <br/>
+              <br/>
+              If you want to <strong>append</strong> to the end of the file, use <CodeSnippet
+              i=">>"/> instead.
+              <br/>
+              Example: <CodeSnippet i='echo "foo bar" >> list.md'/>
             </>
           }
         />
@@ -246,17 +270,17 @@ export default function CardContainer() {
           command="COMMAND_1 | COMMAND_2"
           description={
             <>
-              Pipe the output of <CodeSnippet i="COMMAND_1" /> into <CodeSnippet i="COMMAND_2" />
-              <br />
-              Basically run <CodeSnippet i="COMMAND_1" /> with <CodeSnippet i="COMMAND_2" /> as input.
-              <br />
-              Example: <CodeSnippet i="head -n 5 file.txt | tail -n 2" />
+              Pipe the output of <CodeSnippet i="COMMAND_1"/> into <CodeSnippet i="COMMAND_2"/>
+              <br/>
+              Basically run <CodeSnippet i="COMMAND_1"/> with <CodeSnippet i="COMMAND_2"/> as input.
+              <br/>
+              Example: <CodeSnippet i="head -n 5 file.txt | tail -n 2"/>
             </>
           }
         />
       </div>
 
-      <hr className={styles.hr} />
+      <hr className={styles.hr}/>
 
       <h2
         className={`size2 color-primary m0 p0 ${styles.subheader}`}
@@ -270,8 +294,8 @@ export default function CardContainer() {
           command="man COMMAND"
           description={
             <>
-              Show the manual for <CodeSnippet i="COMMAND" />
-              <br />
+              Show the manual for <CodeSnippet i="COMMAND"/>
+              <br/>
               This is pretty handy to see what all the parameters do.
             </>
           }
@@ -280,19 +304,20 @@ export default function CardContainer() {
           command="alias ALIAS=COMMAND"
           description={
             <>
-              Make an alias for a <CodeSnippet i="COMMAND" />
-              <br />
-              <CodeSnippet i= "COMMAND" /> may have parameters, but you'll need to use quotations.
-              <br />
-              While this method is viable, I recommend opening <CodeSnippet i="~/.zshrc" /> and adding your alias there (it's the same format).
-              <br />
-              <br />
+              Make an alias for a <CodeSnippet i="COMMAND"/>
+              <br/>
+              <CodeSnippet i="COMMAND"/> may have parameters, but you'll need to use quotations.
+              <br/>
+              While this method is viable, I recommend opening <CodeSnippet i="~/.zshrc"/> and adding your
+              alias there (it's the same format).
+              <br/>
+              <br/>
               Examples:
-              <br />
+              <br/>
               <CodeSnippet i='alias fetch=fastfetch'/>
-              <br />
+              <br/>
               <CodeSnippet i='alias config="open ~/.zshrc"'/>
-              <br />
+              <br/>
               <CodeSnippet i='alias reload="source ~/.zshrc"'/>
             </>
           }
@@ -302,10 +327,10 @@ export default function CardContainer() {
           description={
             <>
               Make a variable for your current zsh session.
-              <br />
-              You can use <CodeSnippet i="echo $VARNAME" /> to print out your variable.
-              <br />
-              Example: <CodeSnippet i='export path="~/downloads/data.json"' />
+              <br/>
+              You can use <CodeSnippet i="echo $VARNAME"/> to print out your variable.
+              <br/>
+              Example: <CodeSnippet i='export path="~/downloads/data.json"'/>
             </>
           }
         />
