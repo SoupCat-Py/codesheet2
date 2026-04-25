@@ -29,8 +29,7 @@ export default function CardContainer() {
               Move to <CodeSnippet i="DIR"/>
               <br/>
               <CodeSnippet i="DIR"/> can be an absolute or relative path
-              <br/>
-              <br/>
+              <hr/>
               A few shortcuts you can use:
               <br/>
               <CodeSnippet i="cd"/> go to root (<CodeSnippet i="~"/>).
@@ -61,7 +60,7 @@ export default function CardContainer() {
           description={
             <>
               Print the first <CodeSnippet i="NUM"/> lines or bytes of <CodeSnippet i="FILE"/>
-              <br/>
+              <hr/>
               <CodeSnippet i="-n"/> lines mode
               <br/>
               <CodeSnippet i="-c"/> bytes mode
@@ -74,7 +73,7 @@ export default function CardContainer() {
           description={
             <>
               Print the last <CodeSnippet i="NUM"/> lines or bytes of <CodeSnippet i="FILE"/>
-              <br/>
+              <hr/>
               <CodeSnippet i="-n"/> lines mode
               <br/>
               <CodeSnippet i="-c"/> bytes mode
@@ -92,7 +91,7 @@ export default function CardContainer() {
               <br/>
               You can optionally use <CodeSnippet i="-a"/> to specify which app to use. Leaving this out
               uses the file/dir's default app.
-              <br/>
+              <hr/>
               Example: <CodeSnippet i='open index.html -a "VS Code"'/>
             </>
           }
@@ -102,7 +101,7 @@ export default function CardContainer() {
           description={
             <>
               Print the word and character count of <CodeSnippet i="FILE"/>
-              <br/>
+              <hr/>
               <CodeSnippet i="-c"/> print the amount of bytes
               <br/>
               <CodeSnippet i="-l"/> print the amount of lines
@@ -129,7 +128,7 @@ export default function CardContainer() {
             <>
               Create a directory called <CodeSnippet i="NAME"/>
               <br/>
-              <CodeSnippet i="NAME"/> can be an absolute or relative path]
+              (<CodeSnippet i="NAME"/> can be an absolute or relative path)
             </>
           }
         />
@@ -152,7 +151,7 @@ export default function CardContainer() {
               Make a link to <CodeSnippet i="TARGET"/> at <CodeSnippet i="LINK"/>
               <br/>
               If you want to create <CodeSnippet i="LINK"/>
-              <br/>
+              <hr/>
               <CodeSnippet i="-s"/> make a <strong>symbolic</strong> link instead of a hard one (symlinks link to a dir while hard links point to actual data on the disk)
               <br/>
               <CodeSnippet i="-r"/> to be used with <CodeSnippet i="-s"/>, store the target as a relative path (from <CodeSnippet i="LINK"/>'s location). Use when <CodeSnippet i="LINK"/> is in a subdirectory, or use an absolute path instead.
@@ -162,7 +161,8 @@ export default function CardContainer() {
               <CodeSnippet i="-n"/> skip if a link with the same name exists. Basically the opposite of <CodeSnippet i="-f"/>
               <br/>
               <CodeSnippet i="-v"/> verbose output.
-              <br/> There's quite a bit more to it so I recommend looking at the manual for more info.
+              <hr/>
+              There's quite a bit more to it so I recommend looking at the manual for more info.
             </>
           }
         />
@@ -186,10 +186,9 @@ export default function CardContainer() {
               <br/>
               Use the same directory in <CodeSnippet i="FILE"/> and <CodeSnippet i="DESTINATION"/> to
               rename <CodeSnippet i="FILE"/>
-              <br/>
+              <hr/>
               <CodeSnippet i="-n"/> prevents overwriting existing files.
-              <br/>
-              <br/>
+              <hr/>
               Examples: <br/>
               move <CodeSnippet i="mv ~/file.txt ~/dir/file.txt"/>
               <br/>
@@ -210,7 +209,7 @@ export default function CardContainer() {
           description={
             <>
               Delete <CodeSnippet i="FILE"/>
-              <br/>
+              <hr/>
               <CodeSnippet i="-r"/> deletes recursively (for non-empty
               directories)
               <br/>
@@ -221,7 +220,7 @@ export default function CardContainer() {
               <br/>
               <CodeSnippet i="-i"/> request confirmation before deleting each
               file (must type "y" or "n")
-              <br/>
+              <hr/>
               Note that <CodeSnippet i="-i"/> overrides <CodeSnippet i="-f"/>
             </>
           }
@@ -258,11 +257,10 @@ export default function CardContainer() {
               content.
               <br/>
               Example: <CodeSnippet i='echo "hello world" > file.txt'/>
-              <br/>
-              <br/>
+              <hr/>
               If you want to <strong>append</strong> to the end of the file, use <CodeSnippet
               i=">>"/> instead.
-              <br/>
+              <hr/>
               Example: <CodeSnippet i='echo "foo bar" >> list.md'/>
             </>
           }
@@ -274,7 +272,7 @@ export default function CardContainer() {
               Pipe the output of <CodeSnippet i="COMMAND_1"/> into <CodeSnippet i="COMMAND_2"/>
               <br/>
               Basically run <CodeSnippet i="COMMAND_1"/> with <CodeSnippet i="COMMAND_2"/> as input.
-              <br/>
+              <hr/>
               Example: <CodeSnippet i="head -n 5 file.txt | tail -n 2"/>
             </>
           }
@@ -308,7 +306,7 @@ export default function CardContainer() {
               Make a variable for your current zsh session.
               <br/>
               You can use <CodeSnippet i="echo $VARNAME"/> to print out your variable.
-              <br/>
+              <hr/>
               Example: <CodeSnippet i='export path="~/downloads/data.json"'/>
             </>
           }
@@ -323,8 +321,7 @@ export default function CardContainer() {
               <br/>
               While this method is viable, I recommend opening <CodeSnippet i="~/.zshrc"/> and adding your
               alias there (it's the same format).
-              <br/>
-              <br/>
+              <hr/>
               Examples:
               <br/>
               <CodeSnippet i='alias fetch=fastfetch'/>
@@ -342,7 +339,7 @@ export default function CardContainer() {
               Search for <CodeSnippet i="PATTERN"/> in <CodeSnippet i="FILE"/> or from piped input.
               <br/>
               Grep will search in the working dir if <CodeSnippet i="FILE"/> is not specified.
-              <br/>
+              <hr/>
               <CodeSnippet i="-i"/> case sensitive
               <br/>
               <CodeSnippet i="-r"/> recursive. Search in subdirectories
@@ -354,6 +351,8 @@ export default function CardContainer() {
               <CodeSnippet i="-c"/> count matches instead of printing them out
               <br/>
               <CodeSnippet i="-A,B,C"/> Show <CodeSnippet i="AMOUNT"/> lines of context. <CodeSnippet i="A"/> shows before and after, <CodeSnippet i="B"/> only before, <CodeSnippet i="C"/> only after
+              <hr/>
+              There's quite a bit more to it so I recommend looking at the manual for more info.
             </>
         }
         />
