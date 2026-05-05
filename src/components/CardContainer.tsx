@@ -289,6 +289,31 @@ export default function CardContainer() {
         Miscellaneous
       </h2>
 
+      <Card
+        command="grep [-irnvc] [-ABC AMOUNT] PATTERN FILE"
+        wide
+        description={
+          <>
+            Search for <CodeSnippet i="PATTERN"/> in <CodeSnippet i="FILE"/> or from piped input.
+            <br/>
+            Grep will search in the working dir if <CodeSnippet i="FILE"/> is not specified.
+            <hr/>
+            <CodeSnippet i="-i"/> case sensitive
+            <br/>
+            <CodeSnippet i="-r"/> recursive. Search in subdirectories
+            <br/>
+            <CodeSnippet i="-n"/> show line numbers of matches
+            <br/>
+            <CodeSnippet i="-v"/> invert match. Only show results that do not contain <CodeSnippet i="PATTERN"/>
+            <br/>
+            <CodeSnippet i="-c"/> count matches instead of printing them out
+            <br/>
+            <CodeSnippet i="-A,B,C"/> Show <CodeSnippet i="AMOUNT"/> lines of context. <CodeSnippet i="A"/> shows after, <CodeSnippet i="B"/> only before, <CodeSnippet i="C"/> before and after.
+            <hr/>
+            There's quite a bit more to it so I recommend looking at the manual for more info.
+          </>
+      }
+      />
       <div className={`d-grid g1 ${styles.section}`}>
         <Card
           command="man COMMAND"
@@ -332,30 +357,6 @@ export default function CardContainer() {
               <CodeSnippet i='alias reload="source ~/.zshrc"'/>
             </>
           }
-        />
-        <Card
-          command="grep [-irnvc] [-ABC AMOUNT] PATTERN FILE"
-          description={
-            <>
-              Search for <CodeSnippet i="PATTERN"/> in <CodeSnippet i="FILE"/> or from piped input.
-              <br/>
-              Grep will search in the working dir if <CodeSnippet i="FILE"/> is not specified.
-              <hr/>
-              <CodeSnippet i="-i"/> case sensitive
-              <br/>
-              <CodeSnippet i="-r"/> recursive. Search in subdirectories
-              <br/>
-              <CodeSnippet i="-n"/> show line numbers of matches
-              <br/>
-              <CodeSnippet i="-v"/> invert match. Only show results that do not contain <CodeSnippet i="PATTERN"/>
-              <br/>
-              <CodeSnippet i="-c"/> count matches instead of printing them out
-              <br/>
-              <CodeSnippet i="-A,B,C"/> Show <CodeSnippet i="AMOUNT"/> lines of context. <CodeSnippet i="A"/> shows before and after, <CodeSnippet i="B"/> only before, <CodeSnippet i="C"/> only after
-              <hr/>
-              There's quite a bit more to it so I recommend looking at the manual for more info.
-            </>
-        }
         />
       </div>
 
